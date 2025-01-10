@@ -1,0 +1,58 @@
+@charset "uft-8";
+
+#main > section {
+    padding: 6rem;
+}
+
+.visual {
+    background: darkturquoise;
+    height: 46rem;
+
+    /* css 개별성 규칙 
+    선택자에 따라 선택기
+    #id=100, .class=10, tag=1 
+    e.g) #exemple .exemple .item h4 +p =>122
+    점수가 높은 명령어를 우선 해석 */
+    padding: 0 !important/* 개별성규칙 무력화 */;
+
+    position: relative;
+}
+
+.visual::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(https://e3.365dm.com/23/11/1600x900/skynews-james-webb-space-nasa_6368218.jpg?20231122092020)
+        no-repeat 0 0 / cover;
+
+    position: absolute;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    top: 0;
+    left: 0;
+}
+
+.visual .inner {
+    position: relative;
+    height: 100%; /* posa로 자식 visual title이 떠버려서 자식한테 h크기를 못 받아오니까 부모인 visual에게 크기를 상속받아옴 */
+}
+
+.visual-title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.visual-title h2 {
+    font-weight: 700;
+    font-size: 4.8rem;
+    color: #fff;
+    line-height: 1;
+}
+
+.visual-title h2 i {
+    color: var(--main-color);
+}
