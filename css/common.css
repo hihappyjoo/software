@@ -55,13 +55,33 @@ hr,
     clip: rect(0, 0, 0, 0);
 }
 
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 body {
     font: 1.6rem/1.7 "Jost", "Pretendard", sans-serif; /* 영문과 숫자는 영어폰트 우선 */
+    word-break: keep-all;
 }
 
 .inner {
     width: 118rem;
     margin: 0 auto;
+}
+
+.sec-title {
+    font-weight: 500;
+    font-size: 3.2rem;
+    color: var(--main-color);
+}
+
+.sec-title + p {
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--title-color);
+    margin-top: 0.4rem;
 }
 
 #header {
