@@ -63,6 +63,7 @@
     z-index: 1;
 
     width: 69rem;
+    width: 58.4746%;
 
     color: #fff;
 }
@@ -136,13 +137,11 @@
 
 .business-list li {
     width: 28rem;
+    width: 23.7288%;
     min-height: 30.2rem;
     padding: 2.8rem 3.2rem;
     border: 1px solid var(--black20p);
     box-shadow: 0 8px 0 rgba(0, 0, 0, 0.05);
-}
-
-.business-list li dl {
 }
 
 .business-list li dl dt {
@@ -172,6 +171,7 @@
 
 .works-list li {
     width: 59rem;
+    width: 50%;
     height: 26rem;
     text-align: center;
 
@@ -223,6 +223,7 @@
 
 .news-text {
     width: 48rem;
+    width: 40.6779%;
 }
 
 .news-text h4 {
@@ -241,6 +242,7 @@
 
 .news-con figure {
     width: 64rem;
+    width: 54.2373%;
 }
 
 .column h4 {
@@ -255,6 +257,12 @@
     color: var(--title-color);
 
     margin-top: 1.8rem;
+}
+
+.column h5 + p {
+    margin-top: 1.8rem;
+    column-count: 2;
+    column-gap: 4rem;
 }
 
 .column p {
