@@ -1,7 +1,9 @@
 @charset "uft-8";
 
 #main > section {
-    padding: 6rem;
+    padding: 6rem 0;
+    padding: 3.125vw 0;
+    padding: clamp(4rem, 3.125vw, 6rem) 0;
 }
 
 .visual {
@@ -71,6 +73,8 @@
 .visual-title h2 {
     font-weight: 700;
     font-size: 4.8rem;
+    font-size: 2.5vw; /* viweport width 기준 폰트사이즈 비율*/
+    font-size: clamp(3rem, 8vw, 4.8rem); /* clamp(최소값, 추천값, 최대값) */
     line-height: 1;
 
     text-transform: uppercase;
@@ -86,7 +90,7 @@
     font-weight: 500;
     font-size: 2rem;
 
-    width: 44rem;
+    /* width: 44rem; */
     margin-top: 2.4rem;
 
     animation: slide-right 1s 0.4s both;
@@ -95,7 +99,7 @@
 .visual-title a.cta {
     font-weight: 700;
 
-    display: flex;
+    display: inline-flex; /* inline과 flex의 특징을 동시에 웃긴놈이 다있네 */
     justify-content: center;
     align-items: center;
 
@@ -178,7 +182,12 @@
     position: relative;
 }
 
-.works-list li a {
+.works-list li figure {
+    width: 100%;
+    height: 100%;
+}
+
+/* .works-list li a {
     display: flex;
     position: relative;
 }
@@ -195,7 +204,7 @@
     height: 100%;
 
     background: rgba(0, 0, 0, 0.5);
-}
+} */
 
 .works-list li p {
     position: absolute;
@@ -208,6 +217,9 @@
     font-weight: 500;
     font-size: 2.4rem;
     color: #fff;
+    text-align: center;
+
+    width: 90%;
 }
 
 .works-list li p strong {
@@ -278,4 +290,149 @@
 .column p + p strong {
     display: block;
     font-weight: 700;
+}
+
+/* .inner 크기에 맞는 분기점 생성 */
+@media screen and (max-width: 1180px) {
+    .inner {
+        width: 94.53125%;
+    }
+}
+
+/* 태블릿 디자인 */
+@media screen and (max-width: 1024px) {
+    /* .inner {
+        width: 968px;
+        width: 94.53125%;
+    } */
+
+    #header nav {
+        height: 10rem;
+    }
+
+    .gnb {
+        display: none;
+    }
+
+    .btu-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 4.8rem;
+        height: 4.8rem;
+        background: url(../img/ico-menu.svg) no-repeat 50%;
+    }
+
+    .visual {
+        height: 64rem;
+    }
+
+    .visual-title {
+        width: 46rem;
+        width: 47.5207%;
+        left: 8.2rem;
+    }
+
+    .business-list {
+        flex-wrap: wrap;
+    }
+
+    .business-list li {
+        width: 47.4rem;
+        width: 48.9669%;
+
+        width: calc((100% - 2rem) / 2); /* (부모가로 - gap*gap갯수) / item갯수 */
+
+        min-height: 2.8rem;
+    }
+
+    .news-text {
+        width: 47.4rem;
+        width: 48.9669%;
+    }
+
+    .news-con figure {
+        width: 47.4rem;
+        width: 48.9669%;
+    }
+
+    .column h5 + p {
+        column-count: 1;
+    }
+
+    ..column p + p {
+        margin-top: 2rem;
+    }
+}
+
+/* 추가한 중간분기 */
+@media screen and (max-width: 900px) {
+    .visual-title {
+        width: 70%;
+    }
+
+    .news-con {
+        /* flex-wrap: wrap;
+        display: block; */
+        flex-direction: column;
+        gap: 2.4rem;
+
+        /* 셋 다 쓸 수 있음 */
+    }
+
+    .news-text {
+        width: 100%;
+    }
+
+    .news-con figure {
+        width: 100%;
+    }
+}
+
+/* 모바일 디자인 */
+@media screen and (max-width: 600px) /* 모바일버전 분기 더 크게 잡기 */ {
+    .inner {
+        /* width: 350px; */
+        width: 89.7436%;
+    }
+
+    .visual {
+        height: 48rem;
+        height: calc(100vh - 10rem);
+    }
+
+    .visual-title {
+        width: 100%;
+        left: 0;
+
+        text-align: center;
+    }
+
+    .visual-title h2 {
+        font-size: 3rem;
+    }
+
+    .business-list li {
+        width: 100%;
+    }
+
+    .works-list li {
+        width: 100%;
+        height: initial;
+        aspect-ratio: 1/0.5;
+    }
+
+    .column h5 {
+        font-size: 2.4rem;
+    }
+
+    .foot-con {
+        flex-direction: column;
+        gap: 2.4rem;
+    }
+
+    .foot-text {
+        text-align: center;
+    }
 }
